@@ -1,8 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import AuthPage from './Pages/AuthPage/AuthPage'
 import HomePage from './Pages/HomePage/HomePage'
 import Layout from './Layouts/PageLayout/Layout'
+import Login from './Components/Login/Login'
+import UpdateUSer from './Components/UpdateUser/UpdateUSer'
 
 function App() {
 
@@ -10,8 +11,9 @@ function App() {
     <>
     <Layout>
     	<Routes>
-				<Route path='/' element={<AuthPage/>} />
-        <Route path='/home' element={<HomePage/>}/>
+				<Route path='/' element={<HomePage/>} />
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/update-user/:id' element={<UpdateUSer/>} loader={({params})=>fetch(`http://localhost:3000/users/${params.id}`)}/>
 			</Routes>
     </Layout>
     </>

@@ -1,15 +1,13 @@
 import React from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
-import Footer from '../../Components/Footer/Footer'
 
 const Layout = ({children}) => {
   return (
-    <div>
+    <div className='max-w-7xl container mx-auto px-4'>
         <Navbar/>
         <div>
             {children}
         </div>
-        <Footer/>
     </div>
   )
 }
